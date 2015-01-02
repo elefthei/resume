@@ -1,0 +1,109 @@
+\documentclass[lettersize,10pt]{article}
+
+%A Few Useful Packages
+\usepackage[top=1.7cm, bottom=1.3cm, left=2cm, right=2cm]{geometry}
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+%\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+%\setmainfont[
+%SmallCapsFont = Fontin-SmallCaps.otf,
+%BoldFont = Fontin-Bold.otf,
+%ItalicFont = Fontin-Italic.otf
+%]
+%{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+\pagestyle{empty} % non-numbered pages
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Lefteris \textsc{Ioannidis}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Thessaloniki, Greece  | Jan, 20 1992 \\
+    \textsc{Address:}   & 428 Memorial Drive, Cambridge, MA \\
+    \textsc{Phone:}     & +1 857 294 6849\\
+    \textsc{email:}     & \href{mailto:elefthei@mit.edu}{elefthei@mit.edu}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \emph{Current} & Undergraduate Researcher at the \textsc{Compilers@MIT} Group, \emph{CSAIL} \\\textsc{Sep 2014}&\emph{Parallel Intermediate Representation for the LLVM Compiler}\\&\footnotesize{Designed a Parallel Intermediate Representation (PIR) for the LLVM Compiler and added Parallel Optimizers to LLVM based on the new PIR. Relevant code will be pushed to the mainstream branch of LLVM. Worked in close collaboration with the SuperTech group at CSAIL and the LLVM developer community. }\\\multicolumn{2}{c}{} \\
+
+ \textsc{Summer 2014} & Graduate Firmware Engineer at \textsc{Intel}, Hillsboro, OR \\&\emph{Wireless Sensor Network for Datacenter Monitoring}\\&\footnotesize{Worked on the \textit{Internet of Things (IoT)} research branch of Intel. Designed and wrote Firmware for Intel embedded microprocessors in a wireless mesh network configuration for large-scale Datacenter monitoring. Internal publication in Aug 2014, external publication pending.}\\\multicolumn{2}{c}{} \\
+
+\textsc{March 2013 - June 2014} & Systems and Networks Administrator at the \textsc{MediaLab},  \emph{MIT}\\&\footnotesize{Systems and Networks Administrator for the Mobile Experience Lab. Responsible for the security, constant uptime and maintenance of 5 physical servers and over 100 websites.}\\\multicolumn{2}{c}{} \\
+
+\textsc{Summer 2013} & Software Engineering Intern at \textsc{MokaFive}, Redwood City, CA\\&\footnotesize{Extended LiveCloud (TM), a cross-platform, secure cloud storage system, to use Peer-to-Peer file transfers. Design based on untrusted ticket servers, untrusted clients and a secure central management console.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+\textsc{June} 2016& \textsc{Master of Electrical Engineering and Computer Science}, \emph{MIT}, Cambridge, MA\\\
+\emph{Expected}& \textbf{Thesis:} \emph{Parallel IR for the LLVM Compiler} | \textbf{Advisor:} Prof. Saman \textsc{Amarasinghe}\\
+& \textbf{Concentration:} \textsc{Computer Systems}\\
+
+\textsc{June} 2015 & \textsc{Bachelor in Electrical Engineering}, \emph{MIT}, Cambridge, MA\\
+\emph{Expected} & \textbf{GPA:} 4.0/5.0 | \textbf{Major:} \textsc{Electrical Engineering and Computer Science}\\
+& Took courses in Electrical Engineering, Software Engineering, Computer Security, Operating Systems, \\
+& Machine Learning and Computer Architecture.\\
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Scholarships}
+\begin{tabular}{rl}
+ \textsc{Sept.} 2014 & \textsc{Research and Innovation Scholars Program}, under Prof. Saman Amarasinghe, \emph{MIT}\\
+ 2011-2015 & \textsc{Undergraduate Researcher Award} through Student Financial Aid, \emph{MIT}\\
+\end{tabular}
+
+\section{Programming Skills}
+\begin{tabular}{rl}
+Proficient:& Python, C/C++, C\#, Java, x86 ASM, Matlab, Bash/Csh, \LaTeX.\\
+Intermediate:& Javascript, HTML, Haskell, Go, Chapel, ARM ASM.\\
+Software:& Linux, GIT, SVN, Tomcat, VIM, GDB, Valgrind, OpenTuner.\\
+\end{tabular}
+
+\section{System Adminstration Skills}
+\begin{tabular}{rl}
+Proficient:& Linux, Debian/Ubuntu, Apache, OpenSSL, SSH/SFTP, Kerberos, OpenLDAP, XEN.\\
+Intermediate:& FreeBSD/OpenBSD, PostgreSQL, mySQL, DHCP, IPSec, OpenStack, KVM.\\
+\end{tabular}
+
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}
