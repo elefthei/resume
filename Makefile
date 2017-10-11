@@ -5,4 +5,4 @@ elefthei.pdf:
 all: elefthei.pdf
 
 clean:
-	rm -f elefthei.aux elefthei.log elefthei.out
+	rm -f elefthei.aux elefthei.log elefthei.out elefthei.pdf
