@@ -1,6 +1,6 @@
 .PHONY=all
-elefthei.pdf:
-	xelatex elefthei.tex
+elefthei.pdf: elefthei.tex
+	xelatex $^
 
 all: elefthei.pdf
 
