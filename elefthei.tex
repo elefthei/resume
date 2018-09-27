@@ -2,34 +2,32 @@
 
 %A Few Useful Packages
 \usepackage[top=1.5cm, bottom=1.0cm, left=2cm, right=2cm]{geometry}
+\usepackage{lipsum}
 \usepackage{marvosym}
 \usepackage{fontspec} 					%for loading fonts
 \usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{supertabular} 				%for Grades
+\usepackage{tabularx}
+\usepackage{changepage}
 \usepackage{titlesec}					%custom \section
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\hypersetup{colorlinks, breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
 
-%FONTS
-%\defaultfontfeatures{Mapping=tex-text}
-%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
-%%% modified for Karol Kozioł for ShareLaTeX use
-%\setmainfont[
-%SmallCapsFont = Fontin-SmallCaps.otf,
-%BoldFont = Fontin-Bold.otf,
-%ItalicFont = Fontin-Italic.otf
-%]
-%{Fontin.otf}
-%%%
+% horizontal space
+\renewcommand{\arraystretch}{1.25}
+
+% Tabularx columns
+\newcolumntype{L}{>{\sc\hsize=.3\hsize\linewidth=\hsize\raggedleft\arraybackslash}X}
+\newcolumntype{R}{>{\small\raggedright\arraybackslash}X}
 
 %CV Sections inspired by:
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+
 \titlespacing{\section}{0pt}{3pt}{3pt}
 %Tweak a bit the top margin
 %\addtolength{\voffset}{-1.3cm}
@@ -43,7 +41,7 @@
 
 %--------------------TITLE-------------
 \par{\centering
-		{\Huge Lef \textsc{Ioannidis}
+		{\Huge Eleftherios ``Lef" \textsc{Ioannidis}
 	}
 	\bigskip\par}
 
@@ -51,69 +49,187 @@
 %Section: Personal Data
 \section{Info}
 
-\begin{tabular}{rl}
-
+\begin{tabularx}{\textwidth}{rl}
     \textsc{Address:}   & 235 Albany St, Cambridge, MA \\
     \textsc{Phone:}     & +1 857 294 6849\\
     \textsc{email:}     & \href{mailto:elefthei@mit.edu}{elefthei@mit.edu}
-\end{tabular}
-
-%Section: Work Experience at the top
-\section{Work Experience}
-\begin{tabular}{rl}
-\textsc{ December 2017 - Now} & Researcher at \textsc{PDOS, CSAIL}, Cambridge, MA\\
-&\footnotesize{Working on formal verification of Computer Systems.}\\\multicolumn{2}{c}{} \\
-\textsc{ May 2016 - October 2017} & Software Architect at \textsc{UnifyID}, San Francisco, CA\\
-
-&\footnotesize{Principal engineer, designed and implemented the UnifyID back-end for secure, implicit authenticaton. }\\
-&\footnotesize{Docker microservices back-end, written in Golang, NodeJS and Python, functionality includes }\\
-&\footnotesize{User \& Device authentication, Data Collection at scale, real-time Machine Learning for authentication. }\\
-&\footnotesize{Managed a team of 10 engineers and handled technical interviews.}\\\multicolumn{2}{c}{} \\
-
-\textsc{September 2015 - May 2016} & Security Engineer at \textsc{Apple}, Cupertino, CA \\&\emph{FairPlay and DRM group}\\
-&\footnotesize{Apple Confidential Project. Relevant to Application Security, Compilers, Reverse Engineering.} \\
-&\footnotesize{Ensuring the FairPlay daemon and FairPlay DRM suite are immune to static and runtime }\\
-&\footnotesize{analysis attacks.}\\\multicolumn{2}{c}{} \\
-\end{tabular}
+\end{tabularx}
 
 %Section: Education
 \section{Education}
-\begin{tabular}{rl}
-%\textsc{June} 2016& \textsc{Master of Electrical Engineering and Computer Science}, \emph{MIT}, Cambridge, MA\\\
-%\emph{Expected}& \textbf{Thesis:} \emph{Parallel IR for the LLVM Compiler} | \textbf{Advisor:} Prof. Saman \textsc{Amarasinghe}\\
-%& \textbf{Concentration:} \textsc{Computer Systems}\\
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+	Dec 2017 - Jan 2019 & (Expected) \textsc{Master's of Engineering in Computer Science}, \emph{CSAIL MIT}, Cambridge, MA\\
+    \textbf{Thesis:}    & \emph{An implementation of Coq's Gallina in C++17} \\
+	\textbf{Advisors:}  & Frans Kaashoek, Nickolai Zeldovich, Adam Chlipala, CSAIL \\
 
-\textsc{December} 2018 & (Expected) \textsc{Master's in Engineering}, \emph{CSAIL MIT}, Cambridge, MA\\
-\textsc{June} 2015 & \textsc{Bachelor's in Computer Science}, \emph{MIT}, Cambridge, MA\\
-\textbf{Major:} & \textsc{Electrical Engineering and Computer Science}\\
-\textbf{Thesis:} & \emph{Parallel Instructions for the LLVM Compiler} | \textbf{Advisor:} Prof. Saman \textsc{Amarasinghe}, CSAIL\\
-\textbf{Focus:} &  Software Engineering, Computer Systems, Computer Security, Cryptography, \\
-& Operating Systems, Computer Architecture, Electrical Engineering and Machine Learning.\\
-\end{tabular}
+	Sep 2011 - Jun 2015 & \textsc{Bachelor's in Computer Science}, \emph{MIT}, Cambridge, MA\\
+	\textbf{Major:}     & \textsc{Electrical Engineering and Computer Science} \\
+	\textbf{Thesis:}    & \emph{Parallel Instructions for the LLVM Compiler} \\
+	\textbf{Advisors:}   & Saman Amarasinghe, Charles Leiserson, CSAIL \\
+  \end{tabularx}
+\end{adjustwidth}
 
-%Section: Scholarships and additional info
-\section{Honors \& Talks}
-\begin{tabular}{rl}
-    \textsc{Apr.} 2017 & \textsc{\textbf{Speaker}}, Data aware Nginx for Machine Learning, Nginxconf 2017, Portland, OR. \\
-    \textsc{Apr.} 2017 & \textsc{\textbf{Speaker}}, Scalable ML microservices on GPUs, Dockercon 2017, Austin, TX. \\
-    \textsc{Feb.} 2017 & \textsc{\textbf{Speaker}}, Secure, real-time data collection on mobile, MadCon 2017, Austin, TX. \\
-    \textsc{Mar.} 2017 & \textsc{\textbf{Winners}}, Security category, Principal Engineer at UnifyID, SXSW pitch competition 2017, Austin, TX. \\
-    \textsc{Feb.} 2017 & \textsc{\textbf{Winners}}, Principal engineer at UnifyID, RSA Innovation Sandbox 2017, San Francisco, CA. \\
-    \textsc{Aug.} 2016 & \textsc{\textbf{Runner-up}}, Principal engineer at UnifyID, TechCrunch Disrupt Battlefield 2016, San Francisco, CA. \\
-    \textsc{Sept.} 2014 & \textsc{\textbf{Research and Innovation Scholar}}, SuperUROP, EECS Department, \emph{MIT}\\
-\end{tabular}
+%Section: Academic Experience
+\section{Academic Work}
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+	Today & {\sc Teaching Assistant, MIT}, Cambridge, MA \\
+	& \textbf{6.828:} Operating Systems. Graduate level course, teaching students to build operating systems based on xv6.
+	Taught by Frans Kaashoek, Adam Belay. \\
+	& \textbf{6.858:} Computer Systems Security. Graduate level course, focused on attacking and defending Computer Systems.
+	Buffer overflows, Return-to-libc, Symbolic Execution, POSIX security, Cryptography, Web Security, Distributed Systems, Blockchain.
+	Taught by Nickolai Zeldovich, Frans Kaashoek. \\
 
+    Today & {\sc Graduate Researcher, PDOS, CSAIL}, Cambridge, MA \\
+    & Formal Verification of Computer Systems. Building a compiler for
+    the Functional, Verified Language of the Coq Proof Assistant, while formally verifying a Mail Server and a Payment Application. \\
+
+	Sep 2015 - Jan 2016 & {\sc Teaching Assistant, NTUA}, Athens, Greece \\
+	& Helped develop problem sets for the Cryptography class, taught in the National Technical University of Athens. \\
+
+    Sep 2014 - Jan 2015 & {\sc Undergraduate Researcher, PL Group, CSAIL}, Cambridge, MA \\
+    & SuperUROP Program for Advanced Undergraduate Research. Year-long research program, worked on developing new parallel extensions for
+	polyhedral Optimizations in LLVM, targeted at the Halide Domain-specific Language \url{http://www.halide-lang.org/} \\
+
+	Jan 2012 - Jan 2015 & {\sc Class Instructor, SIPB IAP}, Cambridge, MA \\
+	& Taught the \emph{Secure Programming in C} class in MIT, organized by the Student Information Processing Board every January.
+    \url{https://github.com/elefthei/secure-C} \\
+
+    Nov 2010 - Jun 2011 & {\sc Researcher, Aristotle University of Thessaloniki}, Greece \\
+    &  FLOW Walkers, a simulation of human behavior in groups. Using flocking, finite and stochastic State Machines and more, automata walk
+    in a room based on deterministic rules, as well as rules of attraction and repulsion. Generated interesting
+    3D graphics of human-like walkers in using Matlab and DarkBasic. \\
+  \end{tabularx}
+\end{adjustwidth}
+
+%Section: Conference Talks
+\section{Conference Talks}
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+    July 2018      & {\sc Making the Rooster fly}, DeepSpec 2018, Princeton, NJ. \\
+    September 2017 & {\sc Data aware Nginx for Load Balancing ML data}, Nginxconf 2017, Portland, OR. \\
+    April 2017     & {\sc Scalable ML microservices on GPUs}, Dockercon 2017, Austin, TX. \\
+    February 2017  & {\sc Secure, Real-time data collection on mobiles}, MadCon 2017, Austin, TX. \\
+    April 2015     & {\sc Parallel and Distributed Extensions to LLVM}, MIT Undergraduate Research Conference and Journal 2015, Cambridge, MA. \\
+  \end{tabularx}
+\end{adjustwidth}
+
+%Section: Work Experience
+\section{Industry Work}
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+	May 2016 - Oct 2017 & {\sc Principal Engineer, UnifyID}, San Francisco, CA\\
+	& First Engineer of UnifyID. While working there, the startup won the 2$^{nd}$ place at TechCrunch Disrupt Battlefield 2016,
+	  1$^{st}$ place at the RSA Innovation Sandbox 2017, 1$^{st}$ place in the Security and Privacy Category, SXSW 2017. Designed and
+      implemented the UnifyID back-end for secure, implicit authenticaton. Designed services as a scalable,
+      Distributed microservice back-end, for multiple User \& Device authentication. Designed and implemented Data Collection clients and
+      real-time Machine Learning algorithms, designed and implemented all end-to-end encryption protocols. Managed a team of 10 engineers and
+      handled all technical interviews. \\
+
+	Aug 2015 - May 2016 & {\sc Security Engineer, Apple}, Cupertino, CA \\
+	& FairPlay and DRM group. Worked on Application Security, Compilers, Reverse Engineering.
+	Ensured the FairPlay daemon and FairPlay DRM suite are immune to static and runtime attacks. \\
+
+	Jun 2014 - Sep 2014 & {\sc Graduate Firmware Engineer Intern, Intel}, Hillsboro, OR \\
+	& Internet of Things (IoT) research branch of Intel. Designed and engineered firmware for Intel embedded microprocessors
+	  in a wireless mesh network configuration for large-scale Datacenter monitoring. Published a whitepaper in the Intel internal library. \\
+
+    Mar 2013 - Sep 2015 & {\sc Systems and Network Administrator}, MIT MediaLab, Cambridge, MA \\
+	& Mobile Experience Lab, Comparative Media Studies Group, MIT. Responsible for the uptime and maintenance of 5 physical servers and over 100 websites.
+	  Software stack was Debian and Xen, running Apache, Django, Kerberos, LDAP, SSH, LDAP and more. \\
+
+	Jun 2013 - Aug 2013 & {\sc Software Engineer Intern, MokaFive}, Redwood City, CA \\
+	& LiveCloud$^{TM}$, a cross-platform, secure cloud storage system. Developed a blacklisting system and Peer-to-Peer file transfers. \\
+	Nov 2011 - Jun 2012 & {\sc Mobile Security Analyst Intern, Securigin}, Cambridge, MA \\
+
+	& Implemented an automated iOS app penetration testing framework, pen-tested thousands of apps and found hundreds of generic network and
+	  memory management vulnerabilities. Selectred for MIT100K enterpeneurship competition. \\
+\end{tabularx}
+\end{adjustwidth}
+
+%Section: Patents
+\section{Patents}
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+    March 2018 & {\sc Privacy preserving System for ML Training Data (us UFID18-1001)} \\
+	& Privacy-preserving system based on Intel SGX Secure Enclaves. Enables high-performance and GPU computing on anonymized user data
+    for Machine Learning, without exposing the identity of the user to the operator, cloud owner or engineer. \\
+  \end{tabularx}
+\end{adjustwidth}
+
+%Section: Open Source work
+\section{Open Source Projects}
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+    October 2017 & {\sc WebTorch: A Deep Learning web server based on Nginx} \\
+    & WebTorch takes advantage of the versatile LuaJIT compiler to bring together the Nginx web serve and Torch, creating an equivalent
+    system to Tensorflow serve, based on a REST API. Multiple data formats are supported and WebTorch was built with
+    performance and ease-of-use in mind. Presented at Nginxconf 2017. \url{https://github.com/elefthei/WebTorch} \\
+
+    April 2017 & {\sc SLOB: Sticky Load Balancer} \\
+    & A Sticky-session Load Balancer using DynDNS for Machine Learning data, proof-of-concept. Presented at Dockercon 2017.
+    \url{https://github.com/elefthei/slob-poc} \\
+
+    July 2016 & {\sc Krypto: OpenSSL bindings for Elixir} \\
+    & Krypto is an easy to use, light-weight, crypto implementation for Elixir with native OpenSSL bindings for common
+    crytpographic operations. \url{https://github.com/elefthei/krypto} \\
+
+    October 2016 & {\sc Lua Machine Learning Microservice} \\
+    & A waffle based web server written in Lua, that integrates with S3 for storage and Torch for Deep Learning on real-time data.
+    Dokcer container available for fast deployment. \url{https://github.com/elefthei/lua-ml-microservice} \\
+
+    September 2016 & {\sc Python Machine Learning Microservice} \\
+    & A flask based web server written in Python, that integrates with S3 for storage and Keras/TensorFlow for Deep Learning on real-time data.
+    Docker container available for fast deployment. Presented at Dockercon 2017. \url{https://github.com/elefthei/python-ml-microservice} \\
+
+    May 2015 & {\sc Eclipse Orion, an Open-source cloud IDE by Eclipse} \\
+    & Added GIT support for the NodeJS implementation of Eclipse Orion. Worked in a team of four students, with technologies like NodeJS,
+    ConnectJS, NodeGit, Javascript, Mocha. Final project for 6.S194 Open Source Lab, Spring 2015.
+    \url{https://github.com/eclipse/orion.client} \\
+
+    December 2012 & {\sc PAL: Progressive Authentication for Linux} \\
+    & The PAL system sets up a progressive authentication scheme for Linux systems. Upon login, users are given a fresh, anonymous user
+    with no privileges, and users can request additional privileges to be given to them on a per-need basis. Final project for 6.858 Computer
+    Systems Security, Fall 2012. \url{https://github.com/elefthei/PAL--Progressive-Authentication-for-Linux} \\
+
+    March 2011 & {\sc Logistic Map Cipher} \\
+    & An encryption standard based on the chaotic properties of the logistic map
+    function. Code available for both Matlab and C/C++. \url{https://github.com/elefthei/lmcipher} \\
+
+  \end{tabularx}
+\end{adjustwidth}
+
+%Section: Software skills
 \section{Software Engineering}
 \begin{tabular}{rl}
-Skills:& Programming Languages, Security, Formal Verification, Functional Programming, \\
+Skills:& Programming Languages, Computer Security, Formal Verification, Functional Programming, \\
 	   & Systems, Architecture, Compilers, Performance Engineering. \\
+Interests:& Category Theory, Dependent Types, Hardware Architecture, HPC. \\
 Languages (expert):& Haskell, C/C++, Go, Javascript, Python, SQL, LLVM, x86 ASM, Bash. \\
 Languages (intermediate):& Coq, Elixir, Lua, Swift, \LaTeX. \\
 Software:& Linux, Docker, Kubernetes, MongoDB, PostgreSQL, GIT, LLVM, GDB. \\
 \end{tabular}
 
-%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+%Section: Volunteer
+\section{Extracurricular Activities}
+\begin{adjustwidth}{}{-2cm}
+  \begin{tabularx}{\textwidth}{L R}
+    Feb 2018 - Jan 2019 & {\sc Office Commissar, SIPB, MIT} \\
+	& Office Commissar for the Student Information Processing Board of MIT. The SIPB is the oldest volunteer computing group in the US.
+    Our services include but not limited to; the Athena project, the Scripts Compute cluster, the Debathena Linux distribution and the
+    Hyades compute cluster, all of which are free software and available to MIT students and faculty. As Office Czar I helped renovate
+    the SIPB office and repurpose space for use by current student projects. Contributed code in the development of the Scripts compute
+    cluster, the Debathena Linux distribution and most recently the Hyades compute cluster. \\
+	Feb 2016 - Jun 2016 & {\sc Electric Guitar player, Blue Bear School of Music}, San Francisco, CA \\
 
-%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+    & Guitar Player in the Blue Bear school of music in San Francisco, CA. Completed all intermediate classes and performed live with a full
+	  band in \emph{The Boom Boom Room} in Filmore St. \\
+	Sep 2014 - Jan 2015 & {\sc Social Chair, The No6 Club, MIT} \\
+
+    & Social chair for the No6 club, a co-ed Independent Living Group in MIT. Organized dinners and social events such as Coffee Hours,
+    where a renowned speaker was invited to give a lecture and discuss with the students. The most notable lecturer was Noam Chomsky. \\
+  \end{tabularx}
+\end{adjustwidth}
 
 \end{document}
