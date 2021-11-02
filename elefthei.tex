@@ -1,7 +1,7 @@
 \documentclass[lettersize,11pt]{article}
 
 %A Few Useful Packages
-\usepackage[top=1.5cm, bottom=1.0cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1.2cm, bottom=0.8cm, left=2cm, right=2cm]{geometry}
 \usepackage{marvosym}
 \usepackage{fontspec} 					%for loading fonts
 \usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
@@ -49,23 +49,21 @@
 
 %--------------------SECTIONS-----------------------------------
 %Section: Personal Data
-\section{Info}
-
+\hrule
 \begin{tabular}{rl}
     \textsc{Address:}   & 748 S Randolph St, Philadelphia, PA \\
-    \textsc{Phone:}     & +1 (267) 968-3532 \\
-    \textsc{email:}     & \href{mailto:elefthei@seas.upenn.edu}{elefthei@seas.upenn.edu}
+    \textsc{Contact:}   & \href{mailto:elefthei@seas.upenn.edu}{elefthei@seas.upenn.edu}, +1 (267) 968-3532 \\
 \end{tabular}
 
 \section{Education}
 \begin{tabular}{rl}
-\textsc{Current} & \textsc{PhD}, \emph{University of Pennsylvania}, Philadelphia, PA\\
+\textsc{Current} & \textsc{PhD in Computer Science}, \emph{University of Pennsylvania}, Philadelphia, PA\\
 \textbf{Research:} & \emph{Research in formal security protocols and zero-knowledge proofs.}\\
-& Using type theory and proof-assistants like Coq, as well as push-button \\
-& verification tools like Dafny and Z3 for cryptography verification. Graduation in 2025. \\
+& Second-year PhD, using the Coq proof-assistant for computer-assisted cryptography. \\
+& Distributed systems language formalization and implementation. Graduation in 2025. \\
 \textbf{Advisors:} & Sebastian \textsc{Angel}, Steve \textsc{Zdancewic}\\
 & \\
-\textsc{Jan} '19 & \textsc{Master's in Engineering}, \emph{CSAIL MIT}, Cambridge, MA\\
+\textsc{Jan} '19 & \textsc{Master's in Engineering}, \emph{MIT}, Cambridge, MA\\
 \textbf{Major:} & \textsc{Computer Science.}\\
 \textbf{Thesis:} & \emph{Extracting and optimizing low-level bytecode from high-level verified Coq.}\\
 \textbf{Advisor:} & Frans \textsc{Kaashoek}, Nickolai \textsc{Zeldovich}, Adam \textsc{Chlipala},  CSAIL\\
@@ -76,39 +74,36 @@
 \textbf{Advisor:} & Prof. Saman \textsc{Amarasinghe}, CSAIL\\
 \end{tabular}
 
+\section{Research}
+\begin{tabular}{rl}
+    \textsc{Oct} 2021 & Efficient Representation of Numerical Optimization Problems for SNARKs, \\
+                      & with Sebastian Angel, Andrew J. Blumberg and Jess Woods. \\
+                      & (under review).  \\
+    \textsc{Mar} 2020 & Scala eDSLs for domain-specific business logic, \\
+                      & Northeast Scala Symposium (NEScala 2020), Brooklyn, NY (online). \\
+    \textsc{Apr} 2019 & MCQC: Extracting and optimizing formally verified code, \\
+                      & NASA Formal Methods Symposium (NFM 2019), Houston, TX. \\
+\end{tabular}
+
 \section{Work Experience}
 \begin{tabular}{rl}
 \textsc{Mar} '19 - \textsc{Sep} '20 & Investment Engineer at \textsc{Bridgewater} Associates, Westport, CT\\
 &\footnotesize{Developed trading algorithms, risk-controls, designed and implemented domain-specific programming}\\
-&\footnotesize{languages for financial data science embedded in Scala.}\\\multicolumn{2}{c}{} \\
-
+&\footnotesize{languages for financial data science embedded in Scala.}\\\multicolumn{2}{c}{}\\
 \textsc{May} '16 - \textsc{Oct} '17 & Software Architect at \textsc{UnifyID}, San Francisco, CA\\
 &\footnotesize{Designed and implemented the back-end for implicit authentication, including end-to-end encryption}\\
-&\footnotesize{protocols, load-balancing, analytics, as well as distributed machine-learning infrastructure.}\\\multicolumn{2}{c}{} \\
-
+&\footnotesize{protocols, load-balancing, analytics, as well as distributed machine-learning infrastructure.}\\\multicolumn{2}{c}{}\\
 \textsc{Sep} '15 - \textsc{May} '16 & Security Engineer at \textsc{Apple}, Cupertino, CA \\&\emph{FairPlay and DRM group}\\
-&\footnotesize{Application Security, worked with the LLVM Compiler in reverse engineering mitigation.}\\\multicolumn{2}{c}{} \\
+&\footnotesize{Application Security, worked with the LLVM Compiler in reverse engineering mitigation.}\\\multicolumn{2}{c}{}\\
 \end{tabular}
 
-
-%Section: Scholarships and additional info
-\section{Conference Talks}
+\section{Software Engineering}
 \begin{tabular}{rl}
-    \textsc{Apr} 2019 & \textsc{\textbf{Speaker}}, MCQC: Extracting and optimizing formally verified code, \\
-     &                                              NASA Formal Methods Symposium (NFM 2019), Houston, TX. \\
-    \textsc{Apr} 2017 & \textsc{\textbf{Speaker}}, Data aware Nginx for Machine Learning, Nginxconf 2017, Portland, OR. \\
-    \textsc{Apr} 2017 & \textsc{\textbf{Speaker}}, Scalable ML microservices on GPUs, Dockercon 2017, Austin, TX. \\
-    \textsc{Feb} 2017 & \textsc{\textbf{Speaker}}, Secure, real-time data collection on mobile, MadCon 2017, Austin, TX. \\
+Skills:& Programming Languages, Formal Verification, Security, Operating Systems, \\
+	   & Distributed Systems, Compilers, High Performance Engineering. \\
+Languages: & Haskell, Coq, OCaml, Scala, C/C++, Go, Javascript. \\
+Software:& Linux, Docker, Kubernetes, SQL, MongoDB, GIT, LLVM. \\
 \end{tabular}
-
-%\section{Software Engineering}
-%\begin{tabular}{rl}
-%Skills:& Programming Languages, Formal Verification, Security, Operating Systems, \\
-%	   & Distributed Systems, Compilers, High Performance Engineering. \\
-%Languages (fluent):& Haskell, Coq, Scala, C/C++, Elm, Go, JS, Bash. \\
-%Languages (intermediate):& Swift, \LaTeX. \\
-%Software:& Linux, Docker, Kubernetes, SQL, MongoDB, GIT, LLVM. \\
-%\end{tabular}
 
 %\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
 
