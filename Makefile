@@ -1,8 +1,9 @@
 .PHONY=all
-elefthei.pdf: elefthei.tex
-	xelatex $^
+
+elefthei.pdf: elefthei.tex industry.tex intro.tex skills.tex education.tex publications.tex
+	xelatex elefthei.tex
 
 all: elefthei.pdf
 
 clean:
-	rm -f elefthei.aux elefthei.log elefthei.out elefthei.pdf
+	rm -f *.aux *.log *.out *.pdf

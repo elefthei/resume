@@ -1,108 +1,49 @@
 \documentclass[lettersize,11pt]{article}
 
-%A Few Useful Packages
 \usepackage[top=1cm, bottom=0.8cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{marvosym}
-\usepackage{fontspec} 					%for loading fonts
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{supertabular} 				%for Grades
 \usepackage{titlesec}					%custom \section
+\usepackage{changepage}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 
-%FONTS
-%\defaultfontfeatures{Mapping=tex-text}
-%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
-%%% modified for Karol Kozioł for ShareLaTeX use
-%\setmainfont[
-%SmallCapsFont = Fontin-SmallCaps.otf,
-%BoldFont = Fontin-Bold.otf,
-%ItalicFont = Fontin-Italic.otf
-%]
-%{Fontin.otf}
-%%%
-
-%CV Sections inspired by:
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{3pt}{3pt}
-%Tweak a bit the top margin
-%\addtolength{\voffset}{-1.3cm}
-
-%Italian hyphenation for the word: ''corporations''
 
 %--------------------BEGIN DOCUMENT----------------------
 \begin{document}
 \pagestyle{empty} % non-numbered pages
 \font\fb=''[cmr10]'' %for use with \LaTeX command
 
-%--------------------TITLE-------------
 \par{\centering
-		{\Huge Eleftherios \textsc{Ioannidis}}\\[0.5em]
-        \href{mailto:elefthei@seas.upenn.edu}{elefthei@seas.upenn.edu}, +1 (267) 968-3532 \\
-	\bigskip\par}
+		{\Huge Lef (Eleftherios) \textsc{Ioannidis}}\\[0.5em]
+        \href{mailto:elefthei@seas.upenn.edu}{elefthei@seas.upenn.edu}, +1 (267) 968-3532 \\[0.5em]}
 
-\section{Software Engineering}
-\begin{tabular}{rl}
-Skills:& Formal Verification, Compilers, Cryptography, Programming Languages, Writing, Teaching. \\
-Languages: & Scala, Rust, Haskell, C/C++, Python, Coq, OCaml, Go, Java, Javascript. \\
-Software:& Linux, Docker, AWS, Dafny, Z3, SQL, Git, LLVM. \\
-\end{tabular}
+\begin{adjustwidth}{1cm}{1cm}
+\input{intro}\\
+\end{adjustwidth}
+
 
 \section{Industry Experience}
-\begin{tabular}{rl}
-\textsc{May} '22 - \textsc{Aug} '22 & Research Scientist Intern at \textsc{Amazon}, Automated Reasoning Group, Arlington, VA\\
-&\footnotesize{Designed and prototyped a type system and type inference for the Cedar Authorization language.}\\[0.5em]
-
-\textsc{Mar} '19 - \textsc{Sep} '20 & Investment Engineer at \textsc{Bridgewater} Associates, Westport, CT\\
-&\footnotesize{Developed trading algorithms, risk-controls, designed and implemented domain-specific programming}\\
-&\footnotesize{languages for financial data science embedded in Scala. Taught Scala to $>100$ traders and engineers.}\\[0.5em]
-
-\textsc{May} '16 - \textsc{Oct} '17 & Software Architect at \textsc{UnifyID}, San Francisco, CA\\
-&\footnotesize{Designed and implemented the microservice back-end for implicit authentication. Implemented}\\
-&\footnotesize{end-to-end encryption and scalable real-time machine-learning services. Acquired by \textsc{Prove} in 2021.}\\[0.5em]
-
-\textsc{Sep} '15 - \textsc{May} '16 & Security Engineer at \textsc{Apple}, \emph{FairPlay group}, Cupertino, CA \\
-&\footnotesize{Static Analysis, Security, LLVM compiler, cryptography (NDA).}\\[0.5em]
-\end{tabular}
+\input{industry}
 
 \section{Publications}
-\begin{tabular}{rl}
-    \textsc{Apr} 2024 & Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization, \\
-                      & with John Kastner, Aaron Eline, Joseph W. Cutler, Shaobo He, Emina Torlak, \\
-                      & Anwar Mamat, Darin McAdams, Matt McCutchen, Andrew Wells, MIchael Hicks, \\
-                      & Neha Rungta, Kyle Headley, Kesha Hietala, Craig Disselkoen. \\
-                      & SPLASH 2024, Pasadena, CA.  \\[0.5em]
-    \textsc{Dec} 2023 & Reef: Fast Succinct Non-Interactive Zero-Knowledge Regex Proofs, \\
-                      & with Sebastian Angel, Elizabeth Margolin, Srinath Setty and Jess Woods. \\
-                      & USENIX Security 2024, Philadelphia, PA.  \\[0.5em]
-    \textsc{Oct} 2021 & Efficient Representation of Numerical Optimization Problems for SNARKs, \\
-                      & with Sebastian Angel, Andrew J. Blumberg and Jess Woods. \\
-                      & USENIX Security 2022, Boston, MA.  \\[0.5em]
-    \textsc{Apr} 2019 & MCQC: Extracting and optimizing formally verified code, \\
-                      & NASA Formal Methods Symposium (NFM 2019), Houston, TX. \\
-\end{tabular}
+\input{publications}
 
 \section{Education}
-\begin{tabular}{rl}
-\textsc{Current} & \textsc{PhD in Computer Science}, \emph{University of Pennsylvania}, Philadelphia, PA\\
-\textbf{Research:} & \emph{Correct compilers for zero-knowledge proofs, formal verification of distributed systems.}\\
-& Fourth-year PhD student advised by Sebastian \textsc{Angel} \& Steve \textsc{Zdancewic}. \\
-& Research on verified compilers for zkSNARKs and verification of liveness and safety \\
-& properties of distributed systems. Graduation expected in 2025. \\
-\textbf{Teaching:} & DeepSpec REU student mentor, Compilers, Software foundations. \\
- & \\[-0.5em]
-\textsc{Jan} 2019 & \textsc{Master's in Engineering}, \emph{MIT} \emph{CSAIL}, Cambridge, MA\\
-\textbf{Research:} & \emph{Extracting and optimizing low-level bytecode from high-level verified Coq.}\\
-& Advised by Frans \textsc{Kaashoek} \& Nickolai \textsc{Zeldovich}, built a compiler from Coq to C++. \\
-\textbf{Teaching:} & Computer Security, Operating Systems. \\
- & \\[-0.5em]
-\textsc{Jun} 2015 & \textsc{Bachelor's in Computer Science}, \emph{MIT} \emph{CSAIL}, Cambridge, MA\\
-\textbf{Thesis:} & \emph{Parallel optimizations for the Halide DSL language}, advised by Saman \textsc{Amarasinghe}. \\
-\end{tabular}
+\input{education}
+
+\section{Programming skills}
+\input{skills}
+
 \end{document}
