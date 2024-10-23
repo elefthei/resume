@@ -1,49 +1,33 @@
-\documentclass[lettersize,11pt]{article}
-
-\usepackage[top=1cm, bottom=0.8cm, left=1.5cm, right=1.5cm]{geometry}
-\usepackage{marvosym}
-\usepackage{fontspec}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
-\RequirePackage{color,graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{supertabular} 				%for Grades
-\usepackage{titlesec}					%custom \section
-\usepackage{changepage}
-
-%Setup hyperref package, and colours for links
-\usepackage{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
-
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{3pt}{3pt}
+\documentclass[11pt]{article}
+\input{lib}
 
 %--------------------BEGIN DOCUMENT----------------------
 \begin{document}
 \pagestyle{empty} % non-numbered pages
 \font\fb=''[cmr10]'' %for use with \LaTeX command
+\nocite{*}
 
-\par{\centering
-		{\Huge Lef (Eleftherios) \textsc{Ioannidis}}\\[0.5em]
-        \href{mailto:elefthei@seas.upenn.edu}{elefthei@seas.upenn.edu}, +1 (267) 968-3532 \\[0.5em]}
-
-\begin{adjustwidth}{1cm}{1cm}
-\input{intro}\\
-\end{adjustwidth}
-
-
-\section{Industry Experience}
-\input{industry}
-
-\section{Publications}
-\input{publications}
+\begin{center}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l c r}
+    New York, NY & \multirow{2}{*}{\huge Lef \textsc{Ioannidis}} & \link{elefthei.me} \\
+    \email{elefthei@mit.edu} & & \link{github.com/elefthei} \\
+    +1 (267) 968-3532 & & \link{linkedin.com/in/elefthei} \\
+  \end{tabular*}
+\end{center}
 
 \section{Education}
 \input{education}
 
-\section{Programming skills}
+\section{Employment}
+\input{industry}
+
+\section{Technologies and Languages}
 \input{skills}
+
+\vspace*{1em}
+%% Publications
+\section{Patents \& Publications}
+\printbibliography[heading=none]
 
 \end{document}
