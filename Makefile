@@ -1,7 +1,7 @@
 .PHONY=all
 
-elefthei.pdf: elefthei.tex lib.tex pubs.bib industry.tex skills.tex education.tex
-	latexmk -xelatex elefthei.tex
+elefthei.pdf: elefthei.tex lib.tex pubs.bib industry.tex skills.tex education.tex committee.tex
+	latexmk -f -xelatex elefthei.tex
 
 all: elefthei.pdf
 

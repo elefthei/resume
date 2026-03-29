@@ -1,3 +1,12 @@
-elefthei.aux
-elefthei.log
-elefthei.out
+*.aux
+*.log
+*.out
+*.bbl
+*.bcf
+*.blg
+*.bpx
+*.xdv
+*.log
+*.fdb_latexmk
+*.fls
+*.run.xml
