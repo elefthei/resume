@@ -18,6 +18,24 @@
 \DeclareFieldFormat[article, inbook, misc, inproceedings]{title}{``#1''}
 \addbibresource{pubs.bib}
 
+% publist's default `ydt' sorts year descending then TITLE, ignoring month.
+% Reverse-chronological requires year descending, then month descending.
+\DeclareSortingTemplate{ydmt}{
+  \sort{\field{presort}}
+  \sort[final]{\field{sortkey}}
+  \sort[direction=descending]{
+    \field[strside=left,strwidth=4]{sortyear}
+    \field[strside=left,strwidth=4]{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+    \field[padside=left,padwidth=2,padchar=0]{month}
+    \literal{00}
+  }
+  \sort{\field{sorttitle}\field{title}}
+}
+\ExecuteBibliographyOptions{sorting=ydmt}
+
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
